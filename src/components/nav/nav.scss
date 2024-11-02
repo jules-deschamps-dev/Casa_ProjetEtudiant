@@ -1,0 +1,38 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  font-family: "Monteserrat";
+  font-size: 24px;
+  img {
+    width: 210px;
+  }
+  div {
+    display: flex;
+    width: 309px;
+    a {
+      text-align: right;
+      flex-grow: 1;
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  nav {
+    font-size: 16px;
+  }
+  nav img {
+    width: 145px;
+  }
+}

@@ -1,0 +1,78 @@
+
+@property --firstpct {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+@property --secondpct {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+@property --stripe-pct {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+#loader-container{
+  height: 100vh;
+}
+
+.spinner {
+  --circle-width: 70px;
+  --bg: #fff;
+  position: relative;
+  top: 6rem;
+  width: 100%;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--circle-width);
+    height: var(--circle-width);
+    background: conic-gradient(transparent var(--firstpct), #FF6060 var(--firstpct), #FF6060 var(--secondpct), transparent var(--secondpct)), #F6F6F6;
+    border-radius: 50%;
+    z-index: 10;
+    animation: spinning 1800ms infinite linear;
+    border: 0px solid white;
+  }
+  
+    &:after {
+      border-radius: 50%;
+      border: none;
+    }
+    &:before {
+      z-index: 11;
+      content: '';
+      width: calc(var(--circle-width) - 15px);
+      height: calc(var(--circle-width) - 15px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--bg);
+      position: absolute;
+    }
+  
+}
+
+@keyframes spinning {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    --secondpct:0%;
+    --firstpct:0%;
+  }
+  50% {
+    --firstpct:0%;
+    --secondpct:100%;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    --firstpct:100%;
+    --secondpct:100%;
+  }
+}

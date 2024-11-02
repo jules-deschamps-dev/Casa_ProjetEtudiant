@@ -1,0 +1,24 @@
+
+#erreur-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 90px - 68px);
+  min-height: calc(100vh - 175px);
+}
+
+#erreur{
+  display: flex;
+  font-weight: bold;
+  font-size: 288px;
+  color: #FF6060;
+}
+
+
+
+@media (max-width: 600px) {
+  #erreur{
+    font-size: 128px;
+  }
+}

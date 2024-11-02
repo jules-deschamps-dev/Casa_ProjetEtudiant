@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src", // Le répertoire de base pour les chemins absolus
+    "paths": {
+      "@services/*": ["services/*"], // Alias pour les services
+      "@components/*": ["components/*"], // Alias pour les composants
+      "@utils/*": ["utils/*"] // Alias pour les utilitaires, etc.
+    }
+  },
+  "include": ["src"] // Dossier à inclure pour la compilation
+}

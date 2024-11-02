@@ -1,0 +1,24 @@
+
+
+#about-page {
+  display: flex;
+  justify-content: center;
+}
+
+#about header {
+  width: 335px;
+  height: auto;
+  aspect-ratio: 335 / 111;
+}
+
+
+#about-page .colapse {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about-page .colapse:not(:last-child) {
+  margin-bottom: 1rem;
+}

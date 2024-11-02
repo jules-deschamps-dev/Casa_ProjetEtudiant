@@ -1,0 +1,58 @@
+@import '../../App.scss'; 
+
+.colapse{
+  position: relative;
+  height: 52px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.colapse.active{
+  height: fit-content;
+}
+
+.colapse .colapse-head {
+  height: 52px;
+  display: flex;
+  top: 0;
+  z-index: 1;
+  color: white;
+  font-weight: bold;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $primary-color;
+}
+.colapse .colapse-head img{
+  transition: all linear 200ms;
+  transform: rotate(180deg);
+}
+.colapse .colapse-head img.active{
+  transform: rotate(0deg);
+}
+
+.colapse .colapse-content {
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  background-color: #fbfbfb;
+  transition: all linear 200ms;
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  .colapse {
+    height: 30px;
+  }
+  .colapse:not(:last-child)
+  {
+    
+    margin: 0 0 2rem 0!important;
+  }
+  .colapse-head {
+    height: 30px !important;
+  }
+  .colapse-head img {
+    height: 24px !important;
+  }
+}

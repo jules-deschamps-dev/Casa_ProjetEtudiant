@@ -1,0 +1,186 @@
+@import "../../App.scss";
+
+
+#logement-page{
+  .colapse{
+    width: calc(50% - 36px / 2);
+  }
+  
+}
+.logement-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+#titre {
+  display: flex;
+  color: $primary-color;
+  font-weight: 500;
+  font-size: 36px;
+  min-height: 52px;
+  margin: 0;
+  padding: 0;
+}
+
+#localisation {
+  display: flex;
+  font-size: 18px;
+  height: 26px;
+}
+
+#chips-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+#chips-container .chips {
+  display: flex;
+  min-width: 115px;
+  width: fit-content;
+  padding: 0 0.5rem;
+  height: 25px;
+  color: #fff;
+  background-color: $primary-color;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-bottom: .5rem;
+}
+
+#hote {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  height: 64px;
+  color: $primary-color;
+  margin-bottom: 2rem;
+}
+
+#hote #name {
+  margin-right: 0.5rem;
+  align-self: center;
+  text-align: end;
+}
+
+#hote img {
+  display: flex;
+  height: 100%;
+  max-height: 64px;
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+}
+
+#rating {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+#rating img {
+  width: 24px;
+  padding: 0 6px;
+}
+
+.colapse-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  margin: 30px 0;
+
+  .image-list-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+
+    .image-item {
+      min-width: 100%;
+      list-style: none;
+      object-fit: contain;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+    scale: .5;
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 45px 20px; /* 20px de marge à gauche et à droite */
+  }
+
+  .logement-information {
+    flex-direction: column;
+  }
+
+  #hote {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0 2rem 0;
+  }
+  .colapse-container {
+    flex-direction: column;
+  }
+  .colapse:not(:last-child) {
+    margin: 0 0 2rem 0!important;
+  }
+  .colapse {
+    width: 100%!important;
+    height: 30px;
+  }
+
+  .colapse-container > div {
+    width: 100%;
+  }
+  .carousel-container{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 335 / 255;
+  }
+}
